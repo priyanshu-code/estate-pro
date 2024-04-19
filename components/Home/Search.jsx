@@ -103,11 +103,11 @@ export default function Search() {
                 <h1 className="hidden sm:block">Filters</h1>
             </button>
             {/* Filter Modal */}
-            <Modal className='flex flex-col items-center justify-between bg-white rounded-2xl p-6 relative' isOpen={filterModalOpen} closeModal={closeFilterModal} >
+            <Modal className='mb-[60%] sm:mb-0 flex flex-col items-center justify-between bg-white rounded-2xl p-6 relative' isOpen={filterModalOpen} closeModal={closeFilterModal} >
                 {!searchLoading && <button className='absolute top-4 right-4 rounded-full hover:bg-gray-100' onClick={closeFilterModal}>
                     <Image className='p-2' src={cross} height={35} width={35} alt='cross' />
                 </button>}
-                <div className="flex flex-col gap-2 w-96 aspect-square">
+                <div className="flex flex-col gap-2 w-[80vw] max-w-96 aspect-square">
                     <h1 className="text-lg lg:text-xl font-bold">Filters</h1>
                     <div className="space-y-1">
                         <Label className="font-bold">Location</Label>
