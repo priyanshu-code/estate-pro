@@ -19,7 +19,7 @@ export default function FavoritesWrapper() {
 }
 
 function Favorites() {
-    const { user, favorites, favoritesLoading } = useSelector(store => store.User)
+    const { user, favorites, favoritesLoading, token } = useSelector(store => store.User)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -30,9 +30,9 @@ function Favorites() {
 
     const PropertyCards = useMemo(() => {
         return favorites.map((item, i) => {
-            return <PropertyCard key={i} props={item} />
+            return <PropertyCard key={i} props={item} token={token} />
         });
-    }, [favorites]);
+    }, [favorites, token]);
 
     if (user.favoriteProperties?.length === 0 || favorites.length == 0) {
         return (

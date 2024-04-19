@@ -35,7 +35,7 @@ function MyListing() {
         return userProperties.map((item, i) => {
             const { _id } = item
             return (<div key={i} className="flex flex-col gap-1">
-                <PropertyCard props={item} />
+                <PropertyCard props={item} token={token} />
                 <div className="grid grid-cols-2 gap-2">
                     <Link target="_blank" href={'account/' + _id} ><Button className="w-full">Edit</Button></Link>
                     <Button onClick={async () => {
@@ -49,7 +49,7 @@ function MyListing() {
                 </div>
             </div>)
         });
-    }, [userProperties, user]);
+    }, [userProperties, user, token]);
 
     if (user.userListings?.length === 0 || userProperties.length === 0) {
         return (
