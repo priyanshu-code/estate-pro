@@ -230,8 +230,7 @@ export default function EditProperty({ property }) {
                                         <FormLabel className='font-bold'>Price*</FormLabel>
                                         <FormControl
                                             onChange={(e) => {
-                                                const newValue = Math.max(Number(e.target.value), 100000);
-                                                field.onChange(Number(newValue));
+                                                field.onChange(Number(e.target.value));
                                             }}
                                         >
                                             <Input
@@ -318,8 +317,7 @@ export default function EditProperty({ property }) {
                                         <FormLabel className='font-bold'>{'Area (sqft.)*'}</FormLabel>
                                         <FormControl
                                             onChange={(e) => {
-                                                const newValue = Math.max(Number(e.target.value), 1000);
-                                                field.onChange(Number(newValue));
+                                                field.onChange(Number(e.target.value));
                                             }}
                                         >
                                             <Input type="number" inputMode="numeric" className="customInput" placeholder="Area" {...field} />
