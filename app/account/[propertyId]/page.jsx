@@ -1,3 +1,4 @@
+import NotFound from "@/app/not-found";
 import EditProperty from "@/components/Account/EditProperty";
 
 const getProperty = async (propertyId) => {
@@ -12,7 +13,7 @@ export default async function Username({ params }) {
     const { propertyId } = params
     const { property } = await getProperty(propertyId);
     if (!property) {
-        return <h1>404 Property not found</h1>
+        return <NotFound />
     }
     return (<EditProperty property={property} />)
 }
